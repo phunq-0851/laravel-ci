@@ -68,4 +68,4 @@ Route::get('/discount/new', function() {
 
 Route::post('/discount/create', 'DiscountController@create')->name('discount-create');
 
-Route::resource('products', 'ProductController');
+Route::resource('products', 'ProductController')
