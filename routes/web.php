@@ -45,7 +45,7 @@ Route::get('/accessors', function() {
   $user = App\User::find(1);
 
   return $user->emailname
-})
+});
 
 Route::get('/murators', function() {
   $user = App\User::find(1);
