@@ -31,7 +31,7 @@ jobs:
       - sleep 10
       - echo 'except develop'
     except:
-      branch:
+      branches:
         - develop
   test2:
     stage: test
@@ -40,7 +40,7 @@ jobs:
       - sleep 10
       - echo fuck
     except:
-      branch:
+      branches:
         - master
   test3:
     stage: test
@@ -49,5 +49,5 @@ jobs:
       - sleep 10
       - echo fuck
     except:
-      branch:
+      branches:
         - develop
