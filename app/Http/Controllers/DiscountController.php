@@ -14,6 +14,7 @@ class DiscountController extends Controller
       $discount->content = $request->content;
       $discount->title = $request->title;
       $discount->save();
+echo "xin chao nha"
       // dd($request->all());
       event(new DiscountEvent($discount));
 
