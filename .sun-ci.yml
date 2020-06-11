@@ -30,6 +30,8 @@ jobs:
       - echo fuck
       - sleep 10
       - echo 'except develop'
+      - composer install
+      - composer sniff
     except:
       branches:
         - develop
