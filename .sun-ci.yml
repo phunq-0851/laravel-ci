@@ -22,6 +22,13 @@ jobs:
       - echo fuck
     after_script:
       - echo yayfuck
+  build2:
+    stage: build
+    image: node:12-alpine
+    services:
+      - redis:alpine
+    script:
+      - composer install
 
   test:
     stage: test
