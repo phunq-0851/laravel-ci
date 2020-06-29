@@ -30,6 +30,9 @@ jobs:
       - redis:alpine
     script:
       - ls -la /
+    coverage:
+      type: clover
+      path: coverage.xml
 
   test:
     stage: test
