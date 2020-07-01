@@ -1,63 +1,20 @@
-workspace: true
-
 stages:
-  - build
-  - nothing
-  - test
+- deploy
 
 jobs:
-  build:
-    stage: build
-    image: node:12-alpine
-    services:
-      - redis:alpine
-    before_script:
-      - echo before_script
-    script:
-      - ls -la /
-      - ls -la /build
-      - ps -a
-      - ulimit -a
-      - sleep 10
-      - echo fuck
-      - c
-    after_script:
-      - echo yayfuck
-  build2:
-    stage: build
-    image: node:12-alpine
-    services:
-      - redis:alpine
-    script:
-      - ls -la /
-
-  test:
-    stage: test
-    image: alpine
-    script:
-      - echo fuck
-      - sleep 10
-      - echo 'except develop'
-    except:
-      branches:
-        - develop
-  test2:
-    stage: test
-    image: alpine
-    script:
-      - sleep 10
-      - echo fuck
-    except:
-      branches:
-        - master
-  test3:
-    stage: test
-    image: alpine
-    script:
-      - sleep 10
-      - echo fuck
-      - composer install
-      - composer sniff
-    except:
-      branches:
-        - develop
+- name: deploy:staging
+  stage: deploy
+  image: sunci/ruby:2.5.1
+  script:
+  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle _2.1.4_ exec cap staging deploy
+  cache:
+  - key: vendor_$CI_BRANCH
+    paths:
+    - vendor/bundle
+  only:
+    branches:
+    - milestone1
+  except:
+    events:
+    - pull_request
