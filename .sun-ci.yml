@@ -20,7 +20,11 @@ jobs:
       - ulimit -a
       - sleep 10
       - echo fuck
-      - c
+      - |
+        apk add curl
+        curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
+        /usr/local/bin/docker-compose build
     after_script:
       - echo yayfuck
   build2:
