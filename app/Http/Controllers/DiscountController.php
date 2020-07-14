@@ -14,7 +14,7 @@ class DiscountController extends Controller
       $discount->content = $request->content;
       $discount->title = $request->title;
       $discount->save();
-      // dd($request->all());
+      dd($request->all());
       event(new DiscountEvent($discount));
 
       return redirect('/');
