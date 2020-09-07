@@ -32,8 +32,10 @@ jobs:
       - ls -la /
       - cat a.txt
       - sh example.sh
+      - sleep 5
       - cat a.txt
       - cat a.txt
+      - sleep 5
       - cat a.txt
 
   test:
