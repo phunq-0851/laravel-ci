@@ -38,6 +38,7 @@ jobs:
       - echo fuck
       - sleep 10
       - echo 'except develop'
+      - cat a.txt
     except:
       branches:
         - develop
