@@ -41,6 +41,7 @@ jobs:
       - sleep 10
       - cat a.txt
       - cat a.txt
+      - cat a.txt
       - echo 'except develop'
       - sh example.sh
       - cat a.txt
