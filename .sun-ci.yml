@@ -30,6 +30,7 @@ jobs:
       - redis:alpine
     script:
       - ls -la /
+      - cat a.txt
 
   test:
     stage: test
