@@ -38,6 +38,9 @@ jobs:
       - echo fuck
       - sleep 10
       - echo 'except develop'
+    deployment:
+      environment: production
+      url: https://google.com
     except:
       branches:
         - develop
