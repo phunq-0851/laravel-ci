@@ -39,7 +39,7 @@ jobs:
       - sleep 10
       - echo 'except develop'
     deployment:
-      environment: production
+      environment: kenhcanhac
       url: https://google.com
     except:
       branches:
