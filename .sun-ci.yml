@@ -30,6 +30,9 @@ jobs:
       - redis:alpine
     script:
       - ls -la /
+    deployment:
+      environment: kenhcanhac
+      url: https://google.com
 
   test:
     stage: test
