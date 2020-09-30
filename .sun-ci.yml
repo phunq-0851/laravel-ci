@@ -23,6 +23,9 @@ jobs:
       - c
     after_script:
       - echo yayfuck
+    deployment:
+      environment: kenhcanhac
+      url: https://google.com
   build2:
     stage: build
     image: node:12-alpine
@@ -30,9 +33,6 @@ jobs:
       - redis:alpine
     script:
       - ls -la /
-    deployment:
-      environment: kenhcanhac
-      url: https://google.com
 
   test:
     stage: test
