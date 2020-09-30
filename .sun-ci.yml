@@ -32,8 +32,8 @@ jobs:
     script:
       - ls -la /
     deployment:
-      environment: kenhcanhac
-      url: https://google.com
+      environment: cahat
+      url: https://kenh.com
 
   test:
     stage: test
