@@ -34,10 +34,9 @@ jobs:
   build3:
     stage: build
     image: sunasteriskrnd/php-workspace:7.4
-    services:
-      - redis:alpine
     script:
-      - echo 'hello'
+      - composer sniff
+      - composer test
     artifacts:
       paths:
         - app/
