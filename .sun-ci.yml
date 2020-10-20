@@ -23,6 +23,7 @@ jobs:
       - c
     after_script:
       - echo yayfuck
+    allow_failure: true
   build2:
     stage: build
     image: node:12-alpine
