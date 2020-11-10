@@ -30,6 +30,13 @@ jobs:
       - redis:alpine
     script:
       - ls -la /
+      - cat a.txt
+      - sh example.sh
+      - sleep 5
+      - cat a.txt
+      - cat a.txt
+      - sleep 5
+      - cat a.txt
 
   test:
     stage: test
@@ -38,6 +45,8 @@ jobs:
       - echo fuck
       - sleep 10
       - echo 'except develop'
+      - sh example.sh
+      - cat a.txt
     except:
       branches:
         - develop
