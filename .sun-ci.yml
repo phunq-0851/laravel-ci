@@ -42,6 +42,9 @@ jobs:
       paths:
         - app/
       expires_in: 3 days
+    coverage:
+      type: clover
+      path: coverage.xml
 
   test:
     stage: test
