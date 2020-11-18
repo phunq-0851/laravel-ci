@@ -21,6 +21,9 @@ jobs:
       - sleep 10
       - echo fuck
       - c
+    coverage:
+      type: clover
+      path: coverage.xml
     after_script:
       - echo yayfuck
     allow_failure: true
