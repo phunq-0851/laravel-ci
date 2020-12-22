@@ -30,6 +30,19 @@ jobs:
       - redis:alpine
     script:
       - ls -la /
+  build3:
+    stage: build
+    image: sunasteriskrnd/php-workspace:7.4
+    script:
+      - composer sniff
+      - composer test
+    artifacts:
+      paths:
+        - app/
+      expires_in: 3 days
+    coverage:
+      type: clover
+      path: coverage.xml
 
   test:
     stage: test
