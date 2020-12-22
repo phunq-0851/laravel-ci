@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
- - <note>
-       <to>Tove</to>
-       <from>Jani</from>
-       <heading>Reminder</heading>
-       <body>Don't forget me this weekend!</body>
-   </note>
+<coverage generated="1593135825">
+    <project timestamp="1593135825">
+        <metrics files="190" loc="8629" ncloc="6803" classes="165" methods="380" coveredmethods="206" conditionals="0" coveredconditionals="0" statements="1853" coveredstatements="1118" elements="2233" coveredelements="1324"/>
+    </project>
+</coverage>
+
