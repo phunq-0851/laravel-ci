@@ -1,5 +1,3 @@
-workspace: true
-
 stages:
   - build
   - nothing
@@ -9,6 +7,7 @@ jobs:
   build:
     stage: build
     image: node:12-alpine
+    workspace: shared
     services:
       - redis:alpine
     before_script:
@@ -20,7 +19,7 @@ jobs:
       - ulimit -a
       - sleep 10
       - echo fuck
-      - c
+      - echo "shared workspace"
     after_script:
       - echo yayfuck
   build2:
@@ -30,14 +29,17 @@ jobs:
       - redis:alpine
     script:
       - ls -la /
+      - echo "none workspace"
 
   test:
     stage: test
     image: alpine
+    workspace: shared
     script:
       - echo fuck
       - sleep 10
       - echo 'except develop'
+      - echo 'quang phu' > sharedWorkspace
     except:
       branches:
         - develop
@@ -47,15 +49,19 @@ jobs:
     script:
       - sleep 10
       - echo fuck
+      - echo "None workspace"
     except:
       branches:
         - master
   test3:
     stage: test
     image: alpine
+    workspace: shared
     script:
       - sleep 10
       - echo fuck
+      - echo "read file shared workspace"
+      - cat sharedWorkspace
       - composer install
       - composer sniff
     except:
