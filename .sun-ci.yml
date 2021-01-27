@@ -39,7 +39,7 @@ jobs:
       - echo fuck
       - sleep 10
       - echo 'except develop'
-      - echo 'quang phu' > sharedWorkspace
+      - echo 'quang phu' > sharedWorkspace.txt
     except:
       branches:
         - develop
@@ -61,7 +61,7 @@ jobs:
       - sleep 10
       - echo fuck
       - echo "read file shared workspace"
-      - cat sharedWorkspace
+      - cat sharedWorkspace.txt
       - composer install
       - composer sniff
     except:
