@@ -2,6 +2,7 @@ stages:
   - build
   - nothing
   - test
+  - trigger
 
 jobs:
   build:
@@ -62,8 +63,15 @@ jobs:
       - echo fuck
       - echo "read file shared workspace"
       - cat sharedWorkspace.txt
-      - composer install
-      - composer sniff
     except:
       branches:
         - develop
+  
+  trigger1:
+    stage: trigger
+    image: alpine
+    script:
+      - sleep 5
+      - echo hihihihihi
+    when: manual
+    
