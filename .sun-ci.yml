@@ -14,7 +14,6 @@ jobs:
   build:
     stage: build
     image: node:12-alpine
-    workspace: shared
     services:
       - redis:alpine
     before_script:
@@ -41,12 +40,10 @@ jobs:
   test:
     stage: test
     image: alpine
-    workspace: shared
     script:
       - echo fuck
       - sleep 10
       - echo 'except develop'
-      - echo 'quang phu' > sharedWorkspace.txt
     except:
       branches:
         - develop
@@ -63,12 +60,9 @@ jobs:
   test3:
     stage: test
     image: alpine
-    workspace: shared
     script:
       - sleep 10
       - echo fuck
-      - echo "read file shared workspace"
-      - cat sharedWorkspace.txt
     except:
       branches:
         - develop
