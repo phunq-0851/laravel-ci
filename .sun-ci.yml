@@ -5,6 +5,12 @@ stages:
   - trigger
 
 jobs:
+  firsttrigger:
+    stage: build
+    image: alpine
+    script:
+      - echo hihihihihi
+    when: manual
   build:
     stage: build
     image: node:12-alpine
