@@ -58,8 +58,8 @@ Route::get('/dateformat', function() {
   $user = App\User::find(1);
   $user->seen_at = Carbon::now();
   // $user->save();
-  return $user->seen_at->getTimestamp();
-});
+  return $user->seen_at->getTimestamp()
+})
 
 
 Route::get('/discount/new', function() {
