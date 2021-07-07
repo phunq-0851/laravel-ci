@@ -59,13 +59,13 @@ Route::get('/dateformat', function() {
   $user->seen_at = Carbon::now();
   // $user->save();
   return $user->seen_at->getTimestamp();
-});
+})
 
 
 Route::get('/discount/new', function() {
   return view('new');
 });
 
-Route::post('/discount/create', 'DiscountController@create')->name('discount-create');
+Route::post('/discount/create', 'DiscountController@create')->name('discount-create')
 
-Route::resource('products', 'ProductController');
+Route::resource('products', 'ProductController')
