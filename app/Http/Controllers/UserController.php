@@ -21,7 +21,7 @@ class UserController extends Controller
           // return back()->withInput();
           return Redirect::route('users.index');
         }
-
+dd(1);
         return view('search', compact('user'));
     }
 }
