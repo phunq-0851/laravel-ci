@@ -49,8 +49,8 @@ Route::get('/accessors', function() {
 
 Route::get('/murators', function() {
   $user = App\User::find(1);
-  $user->name = "CCC";
-  $user->save();
+  $user->name = "CCC"
+  $user->save()
   return $user->name;
 });
 
