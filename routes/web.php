@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/hello', function() {
   return "Hello";
-});
+})
 
 Auth::routes();
 
@@ -32,7 +32,7 @@ Route::get('/info', function() {
 
 Route::get('/register', function() {
   return view('register');
-});
+})
 
 // Route::get('/search', function() {
 //   return view('search');
