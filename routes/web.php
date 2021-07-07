@@ -64,7 +64,7 @@ Route::get('/dateformat', function() {
 
 Route::get('/discount/new', function() {
   return view('new');
-});
+})
 
 Route::post('/discount/create', 'DiscountController@create')->name('discount-create');
 
