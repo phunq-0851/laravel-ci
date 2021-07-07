@@ -52,20 +52,20 @@ Route::get('/murators', function() {
   $user->name = "CCC";
   $user->save();
   return $user->name;
-});
+})
 
 Route::get('/dateformat', function() {
   $user = App\User::find(1);
   $user->seen_at = Carbon::now();
   // $user->save();
-  return $user->seen_at->getTimestamp();
-});
+  return $user->seen_at->getTimestamp()
+})
 
 
 Route::get('/discount/new', function() {
   return view('new');
 });
 
-Route::post('/discount/create', 'DiscountController@create')->name('discount-create');
+Route::post('/discount/create', 'DiscountController@create')->name('discount-create')
 
 Route::resource('products', 'ProductController');
