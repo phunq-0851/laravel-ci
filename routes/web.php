@@ -31,7 +31,7 @@ Route::get('/info', function() {
 });
 
 Route::get('/register', function() {
-  return view('register');
+  return view('register')
 });
 
 // Route::get('/search', function() {
